@@ -1,6 +1,5 @@
 var React = require("react");
-var Query = require("./Search/Query");
-var Results = require("./Search/Results");
+var Search = require("./Search");
 
 var Main = React.createClass({
 
@@ -10,7 +9,7 @@ var Main = React.createClass({
         };
     },
 
-    
+
     render: function(){
 
         console.log("Render results", this.state.results);
@@ -47,12 +46,7 @@ var Main = React.createClass({
                             <h3 className="text-center">Search for and save articles of interest.</h3>
                         </div>
 
-                        
-                        {/* Search Panel*/}
-                        <Query />
-
-                        {/*Results Panel*/}
-                        <Results />
+                        <Search /> 
 
                     </div>
 
