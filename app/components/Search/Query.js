@@ -7,13 +7,19 @@ var Query = React.createClass({
         return {
             term: "Obama",
             "start": "2010",
-            "end": "2011"
+            "end": "2011",
+            "results": {}
         };
     },
 
     // Runs the query with the initial state variables
     componentDidMount: function(){
-        helpers.runQuery(this.state.term, this.state.start, this.state.end);
+
+        // Calls the axios helper query
+        helpers.runQuery(this.state.term, this.state.start, this.state.end).then(function(data){
+            this.setState({results: data.docs } )
+        }.bind(this));
+
     },
 
     render: function(){
