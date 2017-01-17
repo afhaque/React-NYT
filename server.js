@@ -3,6 +3,7 @@ var express = require("express")
 var bodyParser = require("body-parser")
 var logger = require("morgan")
 var mongoose = require("mongoose")
+var Article = require("./server/model")
 
 // Create an instance of Express App
 var app = express();
@@ -31,14 +32,40 @@ db.once("open", function() {
 // Specifying the public folder where our index page and css will live
 app.use(express.static("./public"));
 
-// Placeholder routes
+// Get all of the saved articles
 app.get("/api/saved", function(req, res){
+
+    Article.find({})
+        .exec(function(err, doc) {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                res.send(doc);
+            }
+        })
+
     console.log("You visited the save route");
 })
 
+// Code for saving articles
 app.post("/api/saved", function(req, res){
+
+    var newArticle = new Article(req.body);
+    console.log(req.body);
+
+    newArticle.save(function(err, doc) {
+        if (err) {
+            console.log(err);
+        }
+
+        else {
+            res.send(doc);
+        }
+    });
+
     console.log("You made a post request");
-})
+});
 
 app.get("*", function(req, res){
     res.sendFile(__dirname + "/public/index_design.html")
