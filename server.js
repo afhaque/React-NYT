@@ -15,6 +15,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// MongoDB Configuration configuration
+mongoose.connect("mongodb://admin:HappyCoding!@ds111479.mlab.com:11479/heroku_3kr2wvk2");
+
+var db = mongoose.connection;
+
+db.on("error", function(err) {
+  console.log("Mongoose Error: ", err);
+});
+
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
 // Specifying the public folder where our index page and css will live
 app.use(express.static("./public"));
 
