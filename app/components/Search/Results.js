@@ -2,6 +2,16 @@ var React = require("react");
 
 var Results = React.createClass({
 
+    getInitialState: function(){
+        return {
+            title: "",
+            url: "",
+            pubdate: ""
+        };
+
+    },
+
+
     render: function(){
 
         return(

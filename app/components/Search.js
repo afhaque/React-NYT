@@ -37,7 +37,7 @@ var Search = React.createClass({
 
             <div className="main-container">
                 <Query />
-                <Results />
+                <Results/>
             </div>
         )
     }
