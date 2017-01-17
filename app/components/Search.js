@@ -12,7 +12,7 @@ var Search = React.createClass({
     // Include the helpers for making API Calls
     getInitialState: function(){
         return {
-            term: "Obama",
+            "term": "Obama",
             "start": "2010",
             "end": "2011",
             "results": {}
@@ -37,7 +37,7 @@ var Search = React.createClass({
 
             <div className="main-container">
                 <Query />
-                <Results/>
+                <Results results= {this.state.start}/>
             </div>
         )
     }

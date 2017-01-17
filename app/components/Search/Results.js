@@ -23,6 +23,7 @@ var Results = React.createClass({
                             <div className="panel panel-primary">
                                 <div className="panel-heading">
                                     <h1 className="panel-title"><strong><i className="fa fa-list-alt"></i>  Rockstar Results</strong></h1>
+                                    <h2> {this.props.results} </h2>
                                 </div>
                                 <div className="panel-body">
                                     <ul className="list-group">

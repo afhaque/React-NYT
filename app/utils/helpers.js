@@ -2,7 +2,7 @@
 var axios = require("axios");
 
 // API Key for NYT
-var APIKey = "9b3adf57854f4a19b7b5782cdd6e427a";
+var APIKey = "d6c8cdc35f93488dbaa04dd9173ea9fb";
 
 // Helper Functions
 var helpers = {

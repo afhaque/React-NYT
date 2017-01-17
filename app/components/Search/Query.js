@@ -12,16 +12,6 @@ var Query = React.createClass({
         };
     },
 
-    // Runs the query with the initial state variables
-    componentDidMount: function(){
-
-        // Calls the axios helper query
-        helpers.runQuery(this.state.term, this.state.start, this.state.end).then(function(data){
-            this.setState({results: data.docs } )
-        }.bind(this));
-
-    },
-
     render: function(){
 
         console.log("Search Term", this.state.term);
