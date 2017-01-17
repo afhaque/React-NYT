@@ -1,8 +1,28 @@
 var React = require("react");
+var helpers = require("../../utils/helpers");
 
 var Query = React.createClass({
 
+    getInitialState: function(){
+        return {
+            term: "Obama",
+            "start": "2010",
+            "end": "2011"
+        };
+    },
+
+    // Runs the query with the initial state variables
+    componentDidMount: function(){
+        helpers.runQuery(this.state.term, this.state.start, this.state.end);
+    },
+
     render: function(){
+
+        console.log("Search Term", this.state.term);
+
+        console.log("Start Date", this.state.start);
+
+        console.log("End Date", this.state.end);
 
         return(
             <div className = "main-container">
