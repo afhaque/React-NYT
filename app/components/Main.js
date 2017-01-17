@@ -4,7 +4,15 @@ var Results = require("./Search/Results");
 
 var Main = React.createClass({
 
+    getInitialState: function(){
+        return {
+            results: [{"Title": "Obama is great"}, {"Title": "Obama is death"}]
+        };
+    },
+
     render: function(){
+
+        console.log("Render results", this.state.results);
 
         return(
             <div className = "main-container">
